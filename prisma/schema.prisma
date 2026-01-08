@@ -38,7 +38,7 @@ model Order {
   createdAt DateTime    @default(now())
   updatedAt DateTime?
   obs       String?
-  status    OrderStatus @default(INICIALIZED)
+  status    OrderStatus @default(INITIALIZED)
 
   user          User           @relation(fields: [userId], references: [id])
   orderProducts OrderProduct[]
@@ -55,7 +55,7 @@ model OrderProduct {
 }
 
 enum OrderStatus {
-  INICIALIZED
+  INITIALIZED
   IN_REVIEW
   PAID
   SENT
